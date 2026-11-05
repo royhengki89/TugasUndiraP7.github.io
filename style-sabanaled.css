@@ -284,7 +284,7 @@ footer {
     #showcase {
         padding: 50px 15px;
         background-position: center center; /* Memposisikan gambar tepat di tengah */
-        background-size: cover;
+        background-size: contain;
     }
 
     #showcase h1 {
