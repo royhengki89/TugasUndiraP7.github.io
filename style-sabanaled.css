@@ -1,0 +1,304 @@
+/* =========================
+   STYLE DASAR WEBSITE
+========================= */
+
+body {
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f7fb;
+    color: #333333;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADER & NAVIGASI
+========================= */
+
+header {
+    background: #183451;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 55px;
+    border-bottom: #1685e8 3px solid;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 15px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: 27px;
+}
+
+header .highlight-led {
+    /* Gradasi warna-warni ala Running Text / LED */
+    background: linear-gradient(90deg, #00f2fe, #4facfe, #00ff87, #ffe600, #ff007f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    /* Efek pendar (glow) tipis khas lampu LED */
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+}
+
+header nav {
+    float: right;
+    margin-top: 8px;
+}
+
+header .current a,
+header a:hover {
+    color: #35b6ff;
+}
+/* =========================
+   EFEK RUNNING TEXT (TEKS BERJALAN)
+========================= */
+
+.running-text-container {
+    background-color: #000000; /* Latar belakang hitam pekat ala papan LED */
+    color: #00ff87; /* Warna hijau terang khas lampu LED */
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 3px solid #1685e8;
+    font-family: 'Courier New', Courier, monospace; /* Font gaya digital */
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    box-shadow: inset 0 0 10px rgba(0, 255, 135, 0.2);
+}
+
+.running-text {
+    display: inline-block;
+    animation: gerakText 25s linear infinite; /* Kecepatan teks berjalan (18 detik) */
+}
+
+/* Animasi pergerakan teks dari kanan ke kiri */
+@keyframes gerakText {
+    0% {
+        transform: translateX(100vw); /* Mulai dari luar layar sebelah kanan */
+    }
+    100% {
+        transform: translateX(-100%); /* Keluar ke sebelah kiri */
+    }
+}
+
+
+/* =========================
+   BANNER / SHOWCASE
+========================= */
+
+#showcase {
+    min-height: 400px;
+
+    background:
+        linear-gradient(
+            rgba(5, 30, 65, 0.92),
+            rgba(0, 95, 180, 0.90)
+        ),
+        url('./img/logo_sabanaled.jpg') no-repeat center center;
+
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+#showcase h1 {
+    margin-top: 65px;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+#showcase p {
+    font-size: 20px;
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #e5f1ff;
+}
+
+
+/* =========================
+   KONTEN PRODUK
+========================= */
+
+#boxes {
+    margin-top: 40px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+#boxes h2 {
+    text-align: center;
+    color: #183451;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+#boxes .subtitle {
+    text-align: center;
+    color: #777777;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   KOTAK PRODUK YANG LEBIH KEREN
+========================= */
+
+#boxes .box {
+    float: left;
+    width: 30%;
+    text-align: center;
+    padding: 25px 20px;
+    margin: 0 1.5% 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    min-height: 410px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+/* Aksen garis neon di atas kartu (awalnya tersembunyi) */
+#boxes .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe, #00ff87);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Efek saat kursor mendekati kotak (Hover) */
+#boxes .box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 149, 255, 0.15);
+    border-color: #bce0fd;
+}
+
+#boxes .box:hover::before {
+    opacity: 1;
+}
+
+/* Efek gambar produk melakukan zoom halus */
+#boxes .box img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+
+#boxes .box:hover img {
+    transform: scale(1.06);
+}
+
+#boxes .box h3 {
+    color: #183451;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+#boxes .box p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    background: #183451;
+    color: #ffffff;
+    clear: both;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE / TAMPILAN HP
+========================= */
+
+@media (max-width: 768px) {
+
+    header #branding,
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 15px;
+    }
+
+    header li {
+        float: none;
+        display: inline-block;
+        padding: 5px 8px;
+    }
+
+    #showcase {
+        padding: 50px 15px;
+    }
+
+    #showcase h1 {
+        margin-top: 45px;
+        font-size: 30px;
+    }
+
+    #showcase p {
+        font-size: 15px;
+    }
+
+    #boxes .box {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+        min-height: auto;
+    }
+
+}
